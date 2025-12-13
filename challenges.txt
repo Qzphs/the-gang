@@ -1,0 +1,6 @@
+base: no r0
+base: no r2
+base: guess 4 bidder's card
+base: guess 4 bidder's hand
+base: 4 locked until final
+base: 1 locked until final
