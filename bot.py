@@ -18,7 +18,7 @@ bot = commands.Bot(command_prefix="/", intents=discord.Intents.all())
 
 @bot.event
 async def on_ready():
-    if not args["sync"]:
+    if args["sync"]:
 
         # TODO remove once this is no longer needed
         for guild in bot.guilds:
