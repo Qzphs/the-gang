@@ -31,7 +31,6 @@ async def on_ready():
 @bot.tree.command(
     name="add",
     description="Add a random challenge to the list.",
-    guilds=bot.guilds,
 )
 async def challenges(interaction: discord.Interaction):
     randomiser.add()
@@ -41,7 +40,6 @@ async def challenges(interaction: discord.Interaction):
 @bot.tree.command(
     name="challenges",
     description="Show all challenges in the list.",
-    guilds=bot.guilds,
 )
 async def challenges(interaction: discord.Interaction):
     await interaction.response.send_message(randomiser.challenges())
@@ -50,7 +48,6 @@ async def challenges(interaction: discord.Interaction):
 @bot.tree.command(
     name="reset",
     description="Remove all challenges from the list.",
-    guilds=bot.guilds,
 )
 async def reset(interaction: discord.Interaction):
     randomiser.reset()
@@ -60,7 +57,6 @@ async def reset(interaction: discord.Interaction):
 @bot.tree.command(
     name="quit",
     description="Stop running the bot.",
-    guilds=bot.guilds,
 )
 async def quit(interaction: discord.Interaction):
     await interaction.response.send_message("quitting")
