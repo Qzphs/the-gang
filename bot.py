@@ -1,4 +1,5 @@
 import argparse
+import random
 
 import discord
 from discord.ext import commands
@@ -43,6 +44,17 @@ async def challenges(interaction: discord.Interaction):
 )
 async def challenges(interaction: discord.Interaction):
     await interaction.response.send_message(randomiser.challenges())
+
+
+@bot.tree.command(
+    name="random",
+    description="Generate a random number between 1 and n.",
+)
+async def random_(interaction: discord.Interaction, n: str):
+    if n.isdigit():
+        await interaction.response.send_message(f"{random.randint(1, int(n))}")
+    else:
+        await interaction.response.send_message(f"n must be integer")
 
 
 @bot.tree.command(
